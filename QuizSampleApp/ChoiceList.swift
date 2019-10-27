@@ -16,14 +16,14 @@ class ChoiceList: UIView {
     @IBOutlet weak var choiceThree: UIButton!
     
     @IBAction func choiceOneTap(_ sender: Any) {
-        choiceHiddenTrue()
+        //choiceHiddenTrue()
         anserTextisHiddenFalse()
-        nextButtonHidednFalse()
+        //nextButtonHidednFalse()
         print("押せちゃってるよ")
     }
     
     @IBAction func choiceTwoTap(_ sender: Any) {
-        quizTextisHiddenTrue()
+        anserTextisHiddenTrue()
         
     }
     
@@ -54,7 +54,15 @@ class ChoiceList: UIView {
         let quizText: QuizText
         quizText = Bundle.main.loadNibNamed("QuizText", owner: self, options: nil)! .first! as! QuizText
         
-        delete(quizText)
+        quizText.removeFromSuperview()
+    }
+    
+    func anserTextisHiddenTrue() {
+        let anserTextisHiddenT: AnserText
+        anserTextisHiddenT = Bundle.main.loadNibNamed("AnserText", owner: self, options: nil)! .first! as! AnserText
+        
+        anserTextisHiddenT.yourAnser.isHidden = true
+        anserTextisHiddenT.yourChoiceAnser.text = nil
     }
     
     func anserTextisHiddenFalse() {

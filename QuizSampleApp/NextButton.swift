@@ -13,7 +13,7 @@ class NextButton: UIView {
     @IBOutlet weak var Next: UIButton!
 
     @IBAction func nextButtonTap(_ sender: Any) {
-        Next.isHidden = true
+        Next.removeFromSuperview()
         choiceListHiddenFalse()
         //anserTextisHiddenTrue()
         
