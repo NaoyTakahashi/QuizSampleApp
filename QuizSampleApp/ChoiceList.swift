@@ -17,7 +17,7 @@ class ChoiceList: UIView {
     
     @IBAction func choiceOneTap(_ sender: Any) {
         //choiceHiddenTrue()
-        anserTextaddSubview()
+        anserTextAddSubview()
         //nextButtonHidednFalse()
         print("押せちゃってるよ")
     }
@@ -36,7 +36,7 @@ class ChoiceList: UIView {
         choiceThree.isHidden = true
     }
     
-    func nextButtaddSubview() {
+    func nextButtAddSubview() {
         let nextButton: NextButton
         nextButton = Bundle.main.loadNibNamed("NextButton", owner: self, options: nil)!.first! as! NextButton
         nextButton.backgroundColor = .blue
@@ -44,7 +44,7 @@ class ChoiceList: UIView {
         nextButton.anserTextisHiddenTrue()
     }
     
-    func quizTexaddSubview() {
+    func quizTexAddSubview() {
         let quizText: QuizText
         quizText = Bundle.main.loadNibNamed("QuizText", owner: self, options: nil)!.first! as! QuizText
         
@@ -66,7 +66,7 @@ class ChoiceList: UIView {
         anserTextisHiddenT.yourChoiceAnser.text = nil
     }
     
-    func anserTextaddSubview() {
+    func anserTextAddSubview() {
         let anserTextisHiddenF: AnserText
         anserTextisHiddenF = Bundle.main.loadNibNamed("AnserText", owner: self, options: nil)! .first! as! AnserText
         

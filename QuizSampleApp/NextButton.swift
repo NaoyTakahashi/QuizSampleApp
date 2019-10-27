@@ -14,12 +14,12 @@ class NextButton: UIView {
 
     @IBAction func nextButtonTap(_ sender: Any) {
         Next.removeFromSuperview()
-        choiceListaddSubView()
+        choiceListAddSubView()
         //anserTextisHiddenTrue()
         
     }
     
-    func choiceListaddSubView() {
+    func choiceListAddSubView() {
         let choiceButton: ChoiceList
         choiceButton = Bundle.main.loadNibNamed("ChoiceList", owner: self, options: nil)!.first! as! ChoiceList
         choiceButton.choiceOne.setTitle("変えてみた", for: .normal)
@@ -35,7 +35,7 @@ class NextButton: UIView {
         anserTextisHiddenT.removeFromSuperview()
     }
     
-    func anserTextaddSubView() {
+    func anserTextAddSubView() {
          let anserTextisHiddenF: AnserText
          anserTextisHiddenF = Bundle.main.loadNibNamed("AnserText", owner: self, options: nil)! .first! as! AnserText
          
@@ -43,7 +43,7 @@ class NextButton: UIView {
          
      }
     
-    func nextButtonaddSubView() {
+    func nextButtonAddSubView() {
         let nextButton: NextButton
         nextButton = Bundle.main.loadNibNamed("NextButton", owner: self, options: nil)!.first! as! NextButton
         nextButton.backgroundColor = .blue
