@@ -15,6 +15,8 @@ class ChoiceList: UIView {
     @IBOutlet weak var choiceTwo: UIButton!
     @IBOutlet weak var choiceThree: UIButton!
     
+    let quizText: QuizText = Bundle.main.loadNibNamed("QuizText", owner: self, options: nil)!.first! as! QuizText
+    
     @IBAction func choiceOneTap(_ sender: Any) {
         quizTextAddSubview()
         print("表示させるよ")
@@ -36,17 +38,18 @@ class ChoiceList: UIView {
     
     
     func quizTextAddSubview() {
-        let quizText: QuizText
-        quizText = Bundle.main.loadNibNamed("QuizText", owner: self, options: nil)!.first! as! QuizText
-        quizText.frame = CGRect(x: 0, y: 300, width: 410, height: 200)
+//        let quizText: QuizText
+//        quizText = Bundle.main.loadNibNamed("QuizText", owner: self, options: nil)!.first! as! QuizText
+        quizText.frame = CGRect(x: 0, y: 200, width: 410, height: 200)
 
         addSubview(quizText)
+        quizText.quizText.isHidden = false
         
     }
     
     func quizTextisHiddenTrue() {
-        let quizText: QuizText
-        quizText = Bundle.main.loadNibNamed("QuizText", owner: self, options: nil)! .first! as! QuizText
+//        let quizText: QuizText
+//        quizText = Bundle.main.loadNibNamed("QuizText", owner: self, options: nil)! .first! as! QuizText
         
         quizText.quizText.isHidden = true
     }
