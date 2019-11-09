@@ -16,15 +16,13 @@ class ChoiceList: UIView {
     @IBOutlet weak var choiceThree: UIButton!
     
     @IBAction func choiceOneTap(_ sender: Any) {
-        //choiceHiddenTrue()
-        anserTextAddSubview()
-        //nextButtonHidednFalse()
-        print("押せちゃってるよ")
+        quizTextAddSubview()
+        print("表示させるよ")
     }
     
     @IBAction func choiceTwoTap(_ sender: Any) {
-        anserTextisHiddenTrue()
-        
+        quizTextisHiddenTrue()
+        print("表示を削除するよ")
     }
     
     @IBAction func choiceThreeTap(_ sender: Any) {
@@ -36,42 +34,21 @@ class ChoiceList: UIView {
         choiceThree.isHidden = true
     }
     
-    func nextButtAddSubview() {
-        let nextButton: NextButton
-        nextButton = Bundle.main.loadNibNamed("NextButton", owner: self, options: nil)!.first! as! NextButton
-        nextButton.backgroundColor = .blue
-        addSubview(nextButton)
-        nextButton.anserTextisHiddenTrue()
-    }
     
-    func quizTexAddSubview() {
+    func quizTextAddSubview() {
         let quizText: QuizText
         quizText = Bundle.main.loadNibNamed("QuizText", owner: self, options: nil)!.first! as! QuizText
-        
+        quizText.frame = CGRect(x: 0, y: 300, width: 410, height: 200)
+
         addSubview(quizText)
+        
     }
     
     func quizTextisHiddenTrue() {
         let quizText: QuizText
         quizText = Bundle.main.loadNibNamed("QuizText", owner: self, options: nil)! .first! as! QuizText
         
-        quizText.removeFromSuperview()
-    }
-    
-    func anserTextisHiddenTrue() {
-        let anserTextisHiddenT: AnserText
-        anserTextisHiddenT = Bundle.main.loadNibNamed("AnserText", owner: self, options: nil)! .first! as! AnserText
-        
-        anserTextisHiddenT.yourAnser.isHidden = true
-        anserTextisHiddenT.yourChoiceAnser.text = nil
-    }
-    
-    func anserTextAddSubview() {
-        let anserTextisHiddenF: AnserText
-        anserTextisHiddenF = Bundle.main.loadNibNamed("AnserText", owner: self, options: nil)! .first! as! AnserText
-        
-        addSubview(anserTextisHiddenF)
-        
+        quizText.quizText.isHidden = true
     }
 
     override func draw(_ rect: CGRect) {

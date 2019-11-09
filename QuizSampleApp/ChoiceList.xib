@@ -9,32 +9,32 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" id="iN0-l3-epB" customClass="ChoiceList" customModule="QuizSampleApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="415" height="115"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ChoiceList" customModule="QuizSampleApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="410" height="120"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4J9-2X-BG6">
-                    <rect key="frame" x="165" y="37" width="85" height="40"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5EQ-hj-25B">
+                    <rect key="frame" x="20" y="35" width="90" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Choice2"/>
+                    <state key="normal" title="選択肢1"/>
                     <connections>
-                        <action selector="choiceTwoTap:" destination="iN0-l3-epB" eventType="touchUpInside" id="mc2-z4-fec"/>
+                        <action selector="choiceOneTap:" destination="iN0-l3-epB" eventType="touchUpInside" id="POu-0i-Ial"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVe-BV-8Pg">
-                    <rect key="frame" x="20" y="37" width="85" height="40"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQp-Xr-y2B">
+                    <rect key="frame" x="160" y="35" width="90" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Choice1"/>
+                    <state key="normal" title="選択肢2"/>
                     <connections>
-                        <action selector="choiceOneTap:" destination="iN0-l3-epB" eventType="touchUpInside" id="qFF-dS-2Id"/>
+                        <action selector="choiceTwoTap:" destination="iN0-l3-epB" eventType="touchUpInside" id="DhN-8c-u8r"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKr-ND-UIK">
-                    <rect key="frame" x="310" y="37" width="85" height="40"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sn3-ov-0uB">
+                    <rect key="frame" x="300" y="35" width="90" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Choice3"/>
+                    <state key="normal" title="選択肢3"/>
                     <connections>
-                        <action selector="choiceThreeTap:" destination="iN0-l3-epB" eventType="touchUpInside" id="fyw-bx-Box"/>
+                        <action selector="choiceThreeTap:" destination="iN0-l3-epB" eventType="touchUpInside" id="OaC-yf-Mff"/>
                     </connections>
                 </button>
             </subviews>
@@ -44,11 +44,11 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="choiceOne" destination="lVe-BV-8Pg" id="JWA-m4-wFJ"/>
-                <outlet property="choiceThree" destination="UKr-ND-UIK" id="CiV-2t-d9y"/>
-                <outlet property="choiceTwo" destination="4J9-2X-BG6" id="hVd-54-h2U"/>
+                <outlet property="choiceOne" destination="5EQ-hj-25B" id="Rjx-vT-GA6"/>
+                <outlet property="choiceThree" destination="sn3-ov-0uB" id="6se-xb-cXQ"/>
+                <outlet property="choiceTwo" destination="bQp-Xr-y2B" id="Kyw-Yj-M08"/>
             </connections>
-            <point key="canvasLocation" x="115.94202898550725" y="-402.45535714285711"/>
+            <point key="canvasLocation" x="31.884057971014496" y="51.5625"/>
         </view>
     </objects>
 </document>
