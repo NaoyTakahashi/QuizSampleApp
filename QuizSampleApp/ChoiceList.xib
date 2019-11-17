@@ -16,7 +16,7 @@
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5EQ-hj-25B">
                     <rect key="frame" x="20" y="35" width="90" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="選択肢1"/>
+                    <state key="normal" title="ほげほげ"/>
                     <connections>
                         <action selector="choiceOneTap:" destination="iN0-l3-epB" eventType="touchUpInside" id="POu-0i-Ial"/>
                     </connections>
@@ -24,7 +24,7 @@
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQp-Xr-y2B">
                     <rect key="frame" x="160" y="35" width="90" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="選択肢2"/>
+                    <state key="normal" title="あれあれ"/>
                     <connections>
                         <action selector="choiceTwoTap:" destination="iN0-l3-epB" eventType="touchUpInside" id="DhN-8c-u8r"/>
                     </connections>
@@ -32,7 +32,7 @@
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sn3-ov-0uB">
                     <rect key="frame" x="300" y="35" width="90" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="選択肢3"/>
+                    <state key="normal" title="どれどれ"/>
                     <connections>
                         <action selector="choiceThreeTap:" destination="iN0-l3-epB" eventType="touchUpInside" id="OaC-yf-Mff"/>
                     </connections>

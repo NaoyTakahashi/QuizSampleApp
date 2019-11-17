@@ -14,12 +14,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var choiceList: ChoiceList
-        choiceList = Bundle.main.loadNibNamed("ChoiceList", owner: self, options: nil)!.first! as! ChoiceList
-        choiceList.choiceOne.setTitle("変えてみた", for: .normal)
+        var startButton: StaNex
+        startButton = Bundle.main.loadNibNamed("StaNex", owner: self, options: nil)!.first! as! StaNex
+        startButton.staNex.setTitle("スタート", for: .normal)
         
-        //self.view.addSubview(quizTextView)
-        self.view.addSubview(choiceList)
+        self.view.addSubview(startButton)
         
     }
 

@@ -16,18 +16,22 @@ class ChoiceList: UIView {
     @IBOutlet weak var choiceThree: UIButton!
     
     let quizText: QuizText = Bundle.main.loadNibNamed("QuizText", owner: self, options: nil)!.first! as! QuizText
+    let getQuizList = quizList()
     
     @IBAction func choiceOneTap(_ sender: Any) {
-        quizTextAddSubview()
-        print("表示させるよ")
+        quizView()
+        //quizTextAddSubview()
+        //print("表示させるよ")
     }
     
     @IBAction func choiceTwoTap(_ sender: Any) {
-        quizTextisHiddenTrue()
-        print("表示を削除するよ")
+        quizView()
+//        quizTextisHiddenTrue()
+//        print("表示を削除するよ")
     }
     
     @IBAction func choiceThreeTap(_ sender: Any) {
+        quizView()
     }
     
     func choiceHiddenTrue() {
@@ -36,12 +40,22 @@ class ChoiceList: UIView {
         choiceThree.isHidden = true
     }
     
+    func quizView() {
+    
+        var idNumber = 0
+        choiceOne.titleLabel?.text = getQuizList.choiceAnswer[idNumber][0]
+        choiceTwo.titleLabel?.text = getQuizList.choiceAnswer[idNumber][0]
+        choiceThree.titleLabel?.text = getQuizList.choiceAnswer[idNumber][0]
+        quizText.quizText.text = getQuizList.question[idNumber]
+        quizText.frame = CGRect(x: 0, y: 200, width: 410, height: 200)
+        addSubview(quizText)
+
+    }
     
     func quizTextAddSubview() {
 //        let quizText: QuizText
 //        quizText = Bundle.main.loadNibNamed("QuizText", owner: self, options: nil)!.first! as! QuizText
         quizText.frame = CGRect(x: 0, y: 200, width: 410, height: 200)
-
         addSubview(quizText)
         quizText.quizText.isHidden = false
         

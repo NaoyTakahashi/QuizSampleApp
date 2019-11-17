@@ -20,6 +20,8 @@
 		D878A01E23642AE700D68BC2 /* ChoiceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D878A01D23642AE700D68BC2 /* ChoiceList.swift */; };
 		D878A02023642AF400D68BC2 /* QuizText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D878A01F23642AF400D68BC2 /* QuizText.swift */; };
 		D878A0222376976D00D68BC2 /* ChoiceList.xib in Resources */ = {isa = PBXBuildFile; fileRef = D878A0212376976D00D68BC2 /* ChoiceList.xib */; };
+		D878A024238173B700D68BC2 /* StaNex.xib in Resources */ = {isa = PBXBuildFile; fileRef = D878A023238173B700D68BC2 /* StaNex.xib */; };
+		D878A026238173CA00D68BC2 /* StaNex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D878A025238173CA00D68BC2 /* StaNex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		D878A01D23642AE700D68BC2 /* ChoiceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceList.swift; sourceTree = "<group>"; };
 		D878A01F23642AF400D68BC2 /* QuizText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizText.swift; sourceTree = "<group>"; };
 		D878A0212376976D00D68BC2 /* ChoiceList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChoiceList.xib; sourceTree = "<group>"; };
+		D878A023238173B700D68BC2 /* StaNex.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StaNex.xib; sourceTree = "<group>"; };
+		D878A025238173CA00D68BC2 /* StaNex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaNex.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,11 +120,13 @@
 				D878A0212376976D00D68BC2 /* ChoiceList.xib */,
 				D878A011236427AF00D68BC2 /* QuizText.xib */,
 				D878A01D23642AE700D68BC2 /* ChoiceList.swift */,
+				D878A023238173B700D68BC2 /* StaNex.xib */,
+				D878A025238173CA00D68BC2 /* StaNex.swift */,
 				D878A01F23642AF400D68BC2 /* QuizText.swift */,
+				D878A00F236423D100D68BC2 /* QuizList.swift */,
 				D8789FE82364235600D68BC2 /* Assets.xcassets */,
 				D8789FEA2364235600D68BC2 /* LaunchScreen.storyboard */,
 				D8789FED2364235600D68BC2 /* Info.plist */,
-				D878A00F236423D100D68BC2 /* QuizList.swift */,
 			);
 			path = QuizSampleApp;
 			sourceTree = "<group>";
@@ -251,6 +257,7 @@
 				D8789FE92364235600D68BC2 /* Assets.xcassets in Resources */,
 				D8789FE72364235000D68BC2 /* Main.storyboard in Resources */,
 				D878A012236427AF00D68BC2 /* QuizText.xib in Resources */,
+				D878A024238173B700D68BC2 /* StaNex.xib in Resources */,
 				D878A0222376976D00D68BC2 /* ChoiceList.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +285,7 @@
 			files = (
 				D8789FE42364235000D68BC2 /* ViewController.swift in Sources */,
 				D8789FE02364235000D68BC2 /* AppDelegate.swift in Sources */,
+				D878A026238173CA00D68BC2 /* StaNex.swift in Sources */,
 				D878A010236423D100D68BC2 /* QuizList.swift in Sources */,
 				D8789FE22364235000D68BC2 /* SceneDelegate.swift in Sources */,
 				D878A01E23642AE700D68BC2 /* ChoiceList.swift in Sources */,
