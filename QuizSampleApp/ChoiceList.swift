@@ -11,14 +11,20 @@ import UIKit
 class ChoiceList: UIView {
     
     
-    @IBOutlet weak var choiceOne: UIButton!
-    @IBOutlet weak var choiceTwo: UIButton!
-    @IBOutlet weak var choiceThree: UIButton!
+    @IBOutlet weak var choiceOneButton: UIButton!
+    @IBOutlet weak var choiceTwoButton: UIButton!
+    @IBOutlet weak var choiceThreeButton: UIButton!
+    
+    let choiceButtonsWidth = 90
+    let choiceButtonsHeight = 50
     
     let quizText: QuizText = Bundle.main.loadNibNamed("QuizText", owner: self, options: nil)!.first! as! QuizText
     let getQuizList = quizList()
+    let quizCount = quizList().quizID.count
+    var idNumber = 0
     
     @IBAction func choiceOneTap(_ sender: Any) {
+        idNumber += 1
         quizView()
         //quizTextAddSubview()
         //print("表示させるよ")
@@ -34,22 +40,25 @@ class ChoiceList: UIView {
         quizView()
     }
     
-    func choiceHiddenTrue() {
-        choiceOne.isHidden = true
-        choiceTwo.isHidden = true
-        choiceThree.isHidden = true
-    }
-    
     func quizView() {
     
-        var idNumber = 0
-        choiceOne.titleLabel?.text = getQuizList.choiceAnswer[idNumber][0]
-        choiceTwo.titleLabel?.text = getQuizList.choiceAnswer[idNumber][0]
-        choiceThree.titleLabel?.text = getQuizList.choiceAnswer[idNumber][0]
-        quizText.quizText.text = getQuizList.question[idNumber]
-        quizText.frame = CGRect(x: 0, y: 200, width: 410, height: 200)
-        addSubview(quizText)
-
+        if quizCount == idNumber {
+            choiceOneButton.removeFromSuperview()
+            choiceTwoButton.removeFromSuperview()
+            choiceThreeButton.removeFromSuperview()
+            quizText.quizText.removeFromSuperview()
+        } else {
+            choiceOneButton.setTitle(getQuizList.choiceAnswer[idNumber][0], for: .normal)
+            choiceTwoButton.setTitle(getQuizList.choiceAnswer[idNumber][1], for: .normal)
+            choiceThreeButton.setTitle(getQuizList.choiceAnswer[idNumber][2], for: .normal)
+            quizText.quizText.text = getQuizList.question[idNumber]
+            quizText.frame = CGRect(x: 0, y: 20, width: 410, height: 200)
+            addSubview(quizText)
+            addSubview(choiceOneButton)
+            addSubview(choiceTwoButton)
+            addSubview(choiceThreeButton)
+        }
+        
     }
     
     func quizTextAddSubview() {
