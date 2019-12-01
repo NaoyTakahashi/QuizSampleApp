@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var StartButton: UIButton!
 
-    let choiceListView = Bundle.main.loadNibNamed("ChoiceList", owner: self, options: nil)!.first! as! ChoiceList
+    let choiceListView = Bundle.main.loadNibNamed("QuizField", owner: self, options: nil)!.first! as! QuizField
     let getQuizList = quizList()
 
     override func viewDidLoad() {
@@ -32,10 +32,7 @@ class ViewController: UIViewController {
         choiceListView.choiceTwoButton.setTitle(getQuizList.choiceAnswer[0][1], for: .normal)
         choiceListView.choiceThreeButton.setTitle(getQuizList.choiceAnswer[0][2], for: .normal)
         choiceListView.frame = CGRect(x: 0, y: 80, width: 210, height: 500)
-        choiceListView.backgroundColor = .red
-        choiceListView.choiceOneButton.backgroundColor = .green
-        choiceListView.choiceTwoButton.backgroundColor = .green
-        choiceListView.choiceThreeButton.backgroundColor = .green
+        self.StartButton.removeFromSuperview()
         self.view.addSubview(choiceListView)
     }
     
