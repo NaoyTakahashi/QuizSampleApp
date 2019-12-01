@@ -14,26 +14,22 @@ class ChoiceList: UIView {
     @IBOutlet weak var choiceOneButton: UIButton!
     @IBOutlet weak var choiceTwoButton: UIButton!
     @IBOutlet weak var choiceThreeButton: UIButton!
-    
-    let choiceButtonsWidth = 90
-    let choiceButtonsHeight = 50
-    
-    let quizText: QuizText = Bundle.main.loadNibNamed("QuizText", owner: self, options: nil)!.first! as! QuizText
+    @IBOutlet weak var quizText: UILabel!
+
     let getQuizList = quizList()
     let quizCount = quizList().quizID.count
     var idNumber = 0
+    var view = UIView()
+    
     
     @IBAction func choiceOneTap(_ sender: Any) {
-        idNumber += 1
+        
         quizView()
-        //quizTextAddSubview()
-        //print("表示させるよ")
     }
     
     @IBAction func choiceTwoTap(_ sender: Any) {
         quizView()
-//        quizTextisHiddenTrue()
-//        print("表示を削除するよ")
+
     }
     
     @IBAction func choiceThreeTap(_ sender: Any) {
@@ -41,44 +37,24 @@ class ChoiceList: UIView {
     }
     
     func quizView() {
-    
+        idNumber += 1
         if quizCount == idNumber {
             choiceOneButton.removeFromSuperview()
             choiceTwoButton.removeFromSuperview()
             choiceThreeButton.removeFromSuperview()
-            quizText.quizText.removeFromSuperview()
+            quizText.removeFromSuperview()
         } else {
             choiceOneButton.setTitle(getQuizList.choiceAnswer[idNumber][0], for: .normal)
             choiceTwoButton.setTitle(getQuizList.choiceAnswer[idNumber][1], for: .normal)
             choiceThreeButton.setTitle(getQuizList.choiceAnswer[idNumber][2], for: .normal)
-            quizText.quizText.text = getQuizList.question[idNumber]
-            quizText.frame = CGRect(x: 0, y: 20, width: 410, height: 200)
-            addSubview(quizText)
-            addSubview(choiceOneButton)
-            addSubview(choiceTwoButton)
-            addSubview(choiceThreeButton)
+            quizText.text = getQuizList.question[idNumber]
+            print(idNumber)
+            print(quizCount)
         }
-        
-    }
-    
-    func quizTextAddSubview() {
-//        let quizText: QuizText
-//        quizText = Bundle.main.loadNibNamed("QuizText", owner: self, options: nil)!.first! as! QuizText
-        quizText.frame = CGRect(x: 0, y: 200, width: 410, height: 200)
-        addSubview(quizText)
-        quizText.quizText.isHidden = false
-        
-    }
-    
-    func quizTextisHiddenTrue() {
-//        let quizText: QuizText
-//        quizText = Bundle.main.loadNibNamed("QuizText", owner: self, options: nil)! .first! as! QuizText
-        
-        quizText.quizText.isHidden = true
     }
 
     override func draw(_ rect: CGRect) {
-        let selfheight: CGFloat = 115
+        let selfheight: CGFloat = 415
         let selfWidth: CGFloat = 415
         
         self.frame.size.height = selfheight
@@ -88,6 +64,5 @@ class ChoiceList: UIView {
         let superScreen: CGRect = (self.window?.screen.bounds)!
         
     }
-    
 
 }
