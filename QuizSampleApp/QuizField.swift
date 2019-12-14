@@ -15,8 +15,8 @@ class QuizField: UIView {
     @IBOutlet weak var choiceThreeButton: UIButton!
     @IBOutlet weak var quizText: UILabel!
 
-    let getQuizList = quizList()
-    let quizCount = quizList().quizID.count
+    let getQuizList = quizList1()
+    let quizCount = quizList1().quizID.count
     var idNumber = 0
     var view = UIView()
     var quizAnser: String = ""
@@ -26,23 +26,26 @@ class QuizField: UIView {
      @IBAction func choiceOneTap(_ sender: Any) {
         titleText = choiceOneButton.titleLabel!.text!
         answerCheck(titleText)
+        idNumber += 1
         quizView()
      }
      
      @IBAction func choiceTwoTap(_ sender: Any) {
         titleText = choiceTwoButton.titleLabel!.text!
         answerCheck(titleText)
+        idNumber += 1
         quizView()
      }
      
      @IBAction func choiceThreeTap(_ sender: Any) {
         titleText = choiceThreeButton.titleLabel!.text!
         answerCheck(titleText)
+        idNumber += 1
         quizView()
      }
      
      func quizView() -> String {
-         idNumber += 1
+         
          if quizCount == idNumber {
              choiceOneButton.removeFromSuperview()
              choiceTwoButton.removeFromSuperview()
