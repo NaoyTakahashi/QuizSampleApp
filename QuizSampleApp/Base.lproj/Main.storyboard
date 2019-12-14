@@ -22,6 +22,22 @@
                                     <action selector="TapStartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1zJ-1w-fw2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OxB-e2-Bqf">
+                                <rect key="frame" x="20" y="614" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="deleteAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jfw-0g-uxC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uMA-qO-fCd">
+                                <rect key="frame" x="20" y="560" width="69" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="deleteALL"/>
+                                <connections>
+                                    <action selector="deleteALLAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A8H-1a-TDe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -32,6 +48,8 @@
                     </view>
                     <connections>
                         <outlet property="StartButton" destination="N2L-as-hV7" id="23a-jp-ubZ"/>
+                        <outlet property="deleteALLButton" destination="uMA-qO-fCd" id="ZZM-Hc-3up"/>
+                        <outlet property="deleteButton" destination="OxB-e2-Bqf" id="jbL-YC-r0R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

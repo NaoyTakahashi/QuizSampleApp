@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Realm
+import RealmSwift
 
 class QuizField: UIView {
 
@@ -16,7 +18,7 @@ class QuizField: UIView {
     @IBOutlet weak var quizText: UILabel!
 
     let getQuizList = quizList1()
-    let quizCount = quizList1().quizID.count
+    let quizCount = quizList1().quizId.count
     var idNumber = 0
     var view = UIView()
     var quizAnser: String = ""
@@ -51,14 +53,14 @@ class QuizField: UIView {
              choiceTwoButton.removeFromSuperview()
              choiceThreeButton.removeFromSuperview()
              quizText.removeFromSuperview()
+             print(Realm.Configuration.defaultConfiguration.fileURL!)
          } else {
             choiceOneButton.setTitle(getQuizList.choiceAnswer[idNumber][0], for: .normal)
             choiceTwoButton.setTitle(getQuizList.choiceAnswer[idNumber][1], for: .normal)
             choiceThreeButton.setTitle(getQuizList.choiceAnswer[idNumber][2], for: .normal)
             quizText.text = getQuizList.question[idNumber]
             quizAnser = String(getQuizList.anser[idNumber])
-            print(idNumber)
-            print(quizCount)
+            print("\(idNumber) for \(quizCount)")
          }
         return quizAnser
      }
@@ -66,15 +68,45 @@ class QuizField: UIView {
     func answerCheck(_ choiceAnser: String) {
         
         if quizAnser == choiceAnser {
-            print("ture")
-            print("quizAnser\(quizAnser)")
-            print("choiceAnser\(choiceAnser)")
+            let success = "正解"
+            sevedAnswe(success, choiceAnser)
+            print("ture" + " quizAnser\(quizAnser)" + " choiceAnser\(choiceAnser)")
         } else {
-            print("fulse")
-            print("quizAnser\(quizAnser)")
-            print("choiceAnser\(choiceAnser)")
+            let failure = "不正解"
+            sevedAnswe(failure, choiceAnser)
+            print("fulse" + " quizAnser\(quizAnser)" + " choiceAnser\(choiceAnser)")
         }
     }
+    
+    func sevedAnswe(_ successOrfailure:String,_ choiceAnser: String) {
+        let realm = try! Realm()
+        let result = Result()
+        result.caseId = getQuizList.caseId
+        result.caseTitle = getQuizList.caseTitle
+        result.quizId = getQuizList.quizId[idNumber]
+        result.question = getQuizList.question[idNumber]
+        result.anser = getQuizList.anser[idNumber]
+        result.successOrfailure = successOrfailure
+        result.choiceAnser = choiceAnser
+        
+        try! realm.write {
+            realm.add(result)
+        }
+    }
+    
+    func deleteAction() {
+        let realm = try! Realm()
+        //let deleteResult = realm.objects(Result.self)
+        let deletePlayedTestCaseFilterOn = realm.objects(PlayedTestCase.self).filter("caseId = \(getQuizList.caseId)")
+        let deleteResultFilterOn = realm.objects(Result.self).filter("caseId = \(getQuizList.caseId)")
+        try! realm.write {
+            realm.delete(deletePlayedTestCaseFilterOn)
+            realm.delete(deleteResultFilterOn)
+        }
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+    }
+    
+    
 
      override func draw(_ rect: CGRect) {
          let selfheight: CGFloat = 515

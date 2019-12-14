@@ -7,13 +7,38 @@
 //
 
 import Foundation
+import Realm
+import RealmSwift
 
-struct result {
-    let caseTitle: String!
-    let resultId = [1,2,3,4,5]
-    let question: [String]
-    let choiceAnswer: [String]
-    let anser: [String]
-    let result: [String]
-
+class PlayedTestCase: Object {
+    @objc dynamic var caseId = 0
+    @objc dynamic var caseTitle = ""
+    
+//    override class func primaryKey() -> String {
+//        return "caseId"
+//    }
 }
+
+class Result: Object {
+    @objc dynamic var caseId = 0
+    @objc dynamic var caseTitle = "" //問題のケース
+    @objc dynamic var quizId = 0 //問題のID
+    @objc dynamic var question = "" //問題
+    @objc dynamic var choiceAnser = ""
+    @objc dynamic var successOrfailure = ""
+    @objc dynamic var anser:String = "" //解答
+    
+//    override class func primaryKey() -> String {
+//        return "caseId"
+//    }
+}
+
+//struct ResultSt {
+//    var caseId = 0
+//    var caseTitle = ""
+//    var quizId:[Int] = []
+//    var question:[String] = []
+//    var userAnswer: [String] = []
+//    var anser:[String] = []
+//}
+
