@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l1p-ch-zGr">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -7,7 +7,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="5uP-tz-aES">
+            <objects>
+                <navigationController id="l1p-ch-zGr" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XQ8-Db-HAr">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="zrf-gs-ZfG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fCr-u9-Wx2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1029" y="80"/>
+        </scene>
+        <!--はじめの画面-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="QuizSampleApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -38,6 +54,14 @@
                                     <action selector="deleteALLAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A8H-1a-TDe"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="id6-ln-Gxe">
+                                <rect key="frame" x="20" y="672" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="リスト"/>
+                                <connections>
+                                    <action selector="listViewSegue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hgh-jO-GAJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -46,15 +70,28 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="はじめの画面" id="dVX-BO-byV"/>
                     <connections>
                         <outlet property="StartButton" destination="N2L-as-hV7" id="23a-jp-ubZ"/>
                         <outlet property="deleteALLButton" destination="uMA-qO-fCd" id="ZZM-Hc-3up"/>
                         <outlet property="deleteButton" destination="OxB-e2-Bqf" id="jbL-YC-r0R"/>
+                        <outlet property="listView" destination="id6-ln-Gxe" id="ePB-x0-r6w"/>
+                        <segue destination="q05-mw-VL9" kind="show" identifier="toResultTableViewSegue" id="w8A-fM-hju"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="79.6875"/>
+        </scene>
+        <!--ResultTableView-->
+        <scene sceneID="R6m-jD-z5g">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="ResultTableView" storyboardName="ResultTableView" referencedIdentifier="ResultTableView" id="q05-mw-VL9" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="WPY-Xh-9Ht"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KXf-TK-cp9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1072" y="80"/>
         </scene>
     </scenes>
 </document>

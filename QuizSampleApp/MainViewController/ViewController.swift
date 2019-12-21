@@ -16,6 +16,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var StartButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var deleteALLButton: UIButton!
+    @IBOutlet weak var listView: UIButton!
+    
+    let choiceListView = Bundle.main.loadNibNamed("QuizField", owner: self, options: nil)!.first! as! QuizField
+    let getQuizList = quizList1()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+    }
+    
+    @IBAction func listViewSegue(_ sender: Any) {
+        toResultTableViewSegue()
+    }
+    
+    
     @IBAction func deleteALLAction(_ sender: Any) {
         let realm = try! Realm()
         try! realm.write {
@@ -25,20 +40,7 @@ class ViewController: UIViewController {
     
     @IBAction func deleteAction(_ sender: Any) {
         choiceListView.deleteAction()
-    }
-    
-    
-    let choiceListView = Bundle.main.loadNibNamed("QuizField", owner: self, options: nil)!.first! as! QuizField
-    let getQuizList = quizList1()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
     }
     
     @IBAction func TapStartButton(_ sender: Any) {
@@ -47,6 +49,11 @@ class ViewController: UIViewController {
         tryCaseTitle()
         self.StartButton.removeFromSuperview()
         self.view.addSubview(choiceListView)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        
     }
     
     func tryCaseTitle() {
@@ -58,5 +65,16 @@ class ViewController: UIViewController {
             realm.add(plaiedTestCase) //各変数に代入した値をRealmに書き込む
         }
     }
+    
+    func toResultTableViewSegue() {
+        performSegue(withIdentifier: "toResultTableViewSegue", sender: nil)
+    }
+    
+    //    func toResultTableViewSegue() {
+    //        let storyboard: UIStoryboard = UIStoryboard(name:"hoge", bundle: nil)
+    //        let toResultListSegue = storyboard.instantiateViewController(withIdentifier: "hoge") as! hoge
+    //        self.present(toResultListSegue, animated: false, completion: nil)
+    //    }
+    
 }
 

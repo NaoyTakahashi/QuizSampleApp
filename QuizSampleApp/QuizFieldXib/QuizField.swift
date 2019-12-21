@@ -10,6 +10,7 @@ import UIKit
 import Realm
 import RealmSwift
 
+
 class QuizField: UIView {
 
     @IBOutlet weak var choiceOneButton: UIButton!
@@ -23,7 +24,6 @@ class QuizField: UIView {
     var view = UIView()
     var quizAnser: String = ""
     var titleText: String = ""
-     
      
      @IBAction func choiceOneTap(_ sender: Any) {
         titleText = choiceOneButton.titleLabel!.text!
@@ -47,13 +47,17 @@ class QuizField: UIView {
      }
      
      func quizView() -> String {
-         
-         if quizCount == idNumber {
-             choiceOneButton.removeFromSuperview()
-             choiceTwoButton.removeFromSuperview()
-             choiceThreeButton.removeFromSuperview()
-             quizText.removeFromSuperview()
-             print(Realm.Configuration.defaultConfiguration.fileURL!)
+        //let hogea = ViewController()
+        //let hoge = Bundle.main.loadNibNamed("Main", owner: self, options: nil)!.first! as! ViewController
+        if quizCount == idNumber {
+            choiceOneButton.removeFromSuperview()
+            choiceTwoButton.removeFromSuperview()
+            choiceThreeButton.removeFromSuperview()
+            quizText.removeFromSuperview()
+            
+            //hoge.toResultTableViewSegue()
+            
+            print(Realm.Configuration.defaultConfiguration.fileURL!)
          } else {
             choiceOneButton.setTitle(getQuizList.choiceAnswer[idNumber][0], for: .normal)
             choiceTwoButton.setTitle(getQuizList.choiceAnswer[idNumber][1], for: .normal)
