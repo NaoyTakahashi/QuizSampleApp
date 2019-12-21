@@ -71,7 +71,7 @@ class ViewController: UIViewController {
     }
     
     func toResultTableViewSegue() {
-        performSegue(withIdentifier: "toResultTableViewSegue", sender: self)
+        performSegue(withIdentifier: "toResultTableViewSegue", sender: nil)
     }
     
     //    func toResultTableViewSegue() {
