@@ -17,7 +17,7 @@ class QuizField: UIView {
     @IBOutlet weak var choiceTwoButton: UIButton!
     @IBOutlet weak var choiceThreeButton: UIButton!
     @IBOutlet weak var quizText: UILabel!
-
+    weak var segue:hoge?
     let getQuizList = quizList1()
     let quizCount = quizList1().quizId.count
     var idNumber = 0
@@ -40,11 +40,13 @@ class QuizField: UIView {
      }
      
      @IBAction func choiceThreeTap(_ sender: Any) {
-        titleText = choiceThreeButton.titleLabel!.text!
-        answerCheck(titleText)
-        idNumber += 1
-        quizView()
+//        titleText = choiceThreeButton.titleLabel!.text!
+//        answerCheck(titleText)
+//        idNumber += 1
+//        quizView()
+        segue?.toResultTableViewSegue()
      }
+    
      
      func quizView() -> String {
         //let hogea = ViewController()
@@ -54,8 +56,6 @@ class QuizField: UIView {
             choiceTwoButton.removeFromSuperview()
             choiceThreeButton.removeFromSuperview()
             quizText.removeFromSuperview()
-            
-            //hoge.toResultTableViewSegue()
             
             print(Realm.Configuration.defaultConfiguration.fileURL!)
          } else {

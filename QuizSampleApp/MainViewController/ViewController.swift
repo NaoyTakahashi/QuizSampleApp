@@ -10,6 +10,10 @@ import UIKit
 import Realm
 import RealmSwift
 
+protocol hoge:class {
+    func toResultTableViewSegue()
+}
+
 class ViewController: UIViewController {
 
     
@@ -67,7 +71,7 @@ class ViewController: UIViewController {
     }
     
     func toResultTableViewSegue() {
-        performSegue(withIdentifier: "toResultTableViewSegue", sender: nil)
+        performSegue(withIdentifier: "toResultTableViewSegue", sender: self)
     }
     
     //    func toResultTableViewSegue() {
