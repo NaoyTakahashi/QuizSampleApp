@@ -26,7 +26,7 @@ class Result: Object {
     @objc dynamic var question = "" //問題
     @objc dynamic var choiceAnser = ""
     @objc dynamic var successOrfailure = ""
-    @objc dynamic var anser:String = "" //解答
+    @objc dynamic var anser = "" //解答
     
 //    override class func primaryKey() -> String {
 //        return "caseId"

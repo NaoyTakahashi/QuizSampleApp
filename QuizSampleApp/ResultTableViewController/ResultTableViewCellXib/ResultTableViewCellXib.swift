@@ -2,20 +2,27 @@
 //  ResultTableViewCellXib.swift
 //  QuizSampleApp
 //
-//  Created by 高橋直也 on 2019/12/21.
-//  Copyright © 2019 高橋直也. All rights reserved.
+//  Created by 高橋直也 on 2020/01/13.
+//  Copyright © 2020 高橋直也. All rights reserved.
 //
 
 import UIKit
 
-class ResultTableViewCellXib: UIView {
+class ResultTableViewCellXib: UITableViewCell {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
     }
-    */
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+    
+    @IBOutlet weak var quizNo: UILabel!
+    @IBOutlet weak var anser: UILabel!
+    @IBOutlet weak var correctORIncorrect: UILabel!
 
 }

@@ -10,11 +10,11 @@ import UIKit
 import Realm
 import RealmSwift
 
-protocol hoge:class {
+protocol ResultTableViewDelegate:class {
     func toResultTableViewSegue()
 }
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, ResultTableViewDelegate {
 
     
     @IBOutlet weak var StartButton: UIButton!
@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        choiceListView.delegate = self
     }
     
     @IBAction func listViewSegue(_ sender: Any) {

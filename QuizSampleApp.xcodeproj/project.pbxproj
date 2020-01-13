@@ -21,10 +21,12 @@
 		D8789FF72364235600D68BC2 /* QuizSampleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8789FF62364235600D68BC2 /* QuizSampleAppTests.swift */; };
 		D878A0022364235600D68BC2 /* QuizSampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D878A0012364235600D68BC2 /* QuizSampleAppUITests.swift */; };
 		D878A010236423D100D68BC2 /* QuizList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D878A00F236423D100D68BC2 /* QuizList.swift */; };
+		D87D8E9423CC4E10002868C6 /* ResultTableViewCellXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87D8E9323CC4E10002868C6 /* ResultTableViewCellXib.swift */; };
+		D87D8E9623CC5033002868C6 /* CorrectAnswerRateCellXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87D8E9523CC5033002868C6 /* CorrectAnswerRateCellXib.xib */; };
+		D87D8E9823CC5063002868C6 /* CorrectAnswerRateCellXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87D8E9723CC5063002868C6 /* CorrectAnswerRateCellXib.swift */; };
 		D8DAED0F23A2859B0015865E /* AnserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DAED0E23A2859B0015865E /* AnserList.swift */; };
 		D8DAED1123ADE0280015865E /* ResultTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8DAED1023ADE0280015865E /* ResultTableView.storyboard */; };
 		D8DAED1323ADE04C0015865E /* ResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DAED1223ADE04C0015865E /* ResultTableViewController.swift */; };
-		D8DAED1A23ADE4300015865E /* ResultTableViewCellXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DAED1923ADE4300015865E /* ResultTableViewCellXib.swift */; };
 		D8DAED1C23ADE4570015865E /* ResultTableViewCellXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8DAED1B23ADE4570015865E /* ResultTableViewCellXib.xib */; };
 		D8DAED1E23ADF5F10015865E /* hoge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8DAED1D23ADF5F00015865E /* hoge.storyboard */; };
 		D8DAED2023ADF5FE0015865E /* hoge.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DAED1F23ADF5FE0015865E /* hoge.swift */; };
@@ -72,10 +74,14 @@
 		D878A0012364235600D68BC2 /* QuizSampleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSampleAppUITests.swift; sourceTree = "<group>"; };
 		D878A0032364235600D68BC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D878A00F236423D100D68BC2 /* QuizList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizList.swift; sourceTree = "<group>"; };
+		D87D8E8C23CC4AA7002868C6 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D87D8E9023CC4AAC002868C6 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D87D8E9323CC4E10002868C6 /* ResultTableViewCellXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCellXib.swift; sourceTree = "<group>"; };
+		D87D8E9523CC5033002868C6 /* CorrectAnswerRateCellXib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CorrectAnswerRateCellXib.xib; sourceTree = "<group>"; };
+		D87D8E9723CC5063002868C6 /* CorrectAnswerRateCellXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectAnswerRateCellXib.swift; sourceTree = "<group>"; };
 		D8DAED0E23A2859B0015865E /* AnserList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnserList.swift; sourceTree = "<group>"; };
 		D8DAED1023ADE0280015865E /* ResultTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResultTableView.storyboard; sourceTree = "<group>"; };
 		D8DAED1223ADE04C0015865E /* ResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewController.swift; sourceTree = "<group>"; };
-		D8DAED1923ADE4300015865E /* ResultTableViewCellXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCellXib.swift; sourceTree = "<group>"; };
 		D8DAED1B23ADE4570015865E /* ResultTableViewCellXib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultTableViewCellXib.xib; sourceTree = "<group>"; };
 		D8DAED1D23ADF5F00015865E /* hoge.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = hoge.storyboard; sourceTree = "<group>"; };
 		D8DAED1F23ADF5FE0015865E /* hoge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hoge.swift; sourceTree = "<group>"; };
@@ -127,6 +133,8 @@
 		A6DB6D6575938F1C6751E939 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D87D8E9023CC4AAC002868C6 /* RealmSwift.framework */,
+				D87D8E8C23CC4AA7002868C6 /* Realm.framework */,
 				4E93119C028B7D9E1DF8DD67 /* Pods_QuizSampleApp.framework */,
 				60EA80995F65812DA4793FF6 /* Pods_QuizSampleApp_QuizSampleAppUITests.framework */,
 				FF52E46DB4E59BC4D8B7FF98 /* Pods_QuizSampleAppTests.framework */,
@@ -193,9 +201,19 @@
 			path = QuizSampleAppUITests;
 			sourceTree = "<group>";
 		};
+		D87D8E8723CC368C002868C6 /* CorrectAnswerRateCellXib */ = {
+			isa = PBXGroup;
+			children = (
+				D87D8E9523CC5033002868C6 /* CorrectAnswerRateCellXib.xib */,
+				D87D8E9723CC5063002868C6 /* CorrectAnswerRateCellXib.swift */,
+			);
+			path = CorrectAnswerRateCellXib;
+			sourceTree = "<group>";
+		};
 		D8DAED1523ADE0D10015865E /* ResultTableViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D87D8E8723CC368C002868C6 /* CorrectAnswerRateCellXib */,
 				D8DAED1823ADE3BA0015865E /* ResultTableViewCellXib */,
 				D8DAED1223ADE04C0015865E /* ResultTableViewController.swift */,
 				D8DAED1023ADE0280015865E /* ResultTableView.storyboard */,
@@ -224,8 +242,8 @@
 		D8DAED1823ADE3BA0015865E /* ResultTableViewCellXib */ = {
 			isa = PBXGroup;
 			children = (
-				D8DAED1923ADE4300015865E /* ResultTableViewCellXib.swift */,
 				D8DAED1B23ADE4570015865E /* ResultTableViewCellXib.xib */,
+				D87D8E9323CC4E10002868C6 /* ResultTableViewCellXib.swift */,
 			);
 			path = ResultTableViewCellXib;
 			sourceTree = "<group>";
@@ -345,6 +363,7 @@
 				D8DAED1C23ADE4570015865E /* ResultTableViewCellXib.xib in Resources */,
 				D8DAED1123ADE0280015865E /* ResultTableView.storyboard in Resources */,
 				D8789FE72364235000D68BC2 /* Main.storyboard in Resources */,
+				D87D8E9623CC5033002868C6 /* CorrectAnswerRateCellXib.xib in Resources */,
 				D84437E82393BF3200B2DF91 /* QuizField.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -477,10 +496,11 @@
 				D84437EA2393BF5D00B2DF91 /* QuizField.swift in Sources */,
 				D8789FE02364235000D68BC2 /* AppDelegate.swift in Sources */,
 				D878A010236423D100D68BC2 /* QuizList.swift in Sources */,
+				D87D8E9423CC4E10002868C6 /* ResultTableViewCellXib.swift in Sources */,
 				D8DAED2023ADF5FE0015865E /* hoge.swift in Sources */,
-				D8DAED1A23ADE4300015865E /* ResultTableViewCellXib.swift in Sources */,
 				D8DAED1323ADE04C0015865E /* ResultTableViewController.swift in Sources */,
 				D8789FE22364235000D68BC2 /* SceneDelegate.swift in Sources */,
+				D87D8E9823CC5063002868C6 /* CorrectAnswerRateCellXib.swift in Sources */,
 				D8DAED0F23A2859B0015865E /* AnserList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
