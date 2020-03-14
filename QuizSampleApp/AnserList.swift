@@ -27,18 +27,7 @@ class Result: Object {
     @objc dynamic var choiceAnser = ""
     @objc dynamic var successOrfailure = ""
     @objc dynamic var anser = "" //解答
-    
-//    override class func primaryKey() -> String {
-//        return "caseId"
-//    }
+
 }
 
-//struct ResultSt {
-//    var caseId = 0
-//    var caseTitle = ""
-//    var quizId:[Int] = []
-//    var question:[String] = []
-//    var userAnswer: [String] = []
-//    var anser:[String] = []
-//}
 

@@ -10,6 +10,7 @@
 		2EB4C99549BECE11AAD3A641 /* Pods_QuizSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E93119C028B7D9E1DF8DD67 /* Pods_QuizSampleApp.framework */; };
 		577F20FE4B4AF2A2A23A06CC /* Pods_QuizSampleApp_QuizSampleAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60EA80995F65812DA4793FF6 /* Pods_QuizSampleApp_QuizSampleAppUITests.framework */; };
 		928B4A10F6D86DF7B8D7BBA9 /* Pods_QuizSampleAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF52E46DB4E59BC4D8B7FF98 /* Pods_QuizSampleAppTests.framework */; };
+		D81E7B51241CB6B8002C4153 /* MondaiObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81E7B50241CB6B8002C4153 /* MondaiObject.swift */; };
 		D84437E82393BF3200B2DF91 /* QuizField.xib in Resources */ = {isa = PBXBuildFile; fileRef = D84437E72393BF3200B2DF91 /* QuizField.xib */; };
 		D84437EA2393BF5D00B2DF91 /* QuizField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84437E92393BF5D00B2DF91 /* QuizField.swift */; };
 		D8789FE02364235000D68BC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8789FDF2364235000D68BC2 /* AppDelegate.swift */; };
@@ -28,8 +29,8 @@
 		D8DAED1123ADE0280015865E /* ResultTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8DAED1023ADE0280015865E /* ResultTableView.storyboard */; };
 		D8DAED1323ADE04C0015865E /* ResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DAED1223ADE04C0015865E /* ResultTableViewController.swift */; };
 		D8DAED1C23ADE4570015865E /* ResultTableViewCellXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8DAED1B23ADE4570015865E /* ResultTableViewCellXib.xib */; };
-		D8DAED1E23ADF5F10015865E /* hoge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8DAED1D23ADF5F00015865E /* hoge.storyboard */; };
-		D8DAED2023ADF5FE0015865E /* hoge.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DAED1F23ADF5FE0015865E /* hoge.swift */; };
+		D8ECF2C124024A7000F3E029 /* mondai.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8ECF2C024024A7000F3E029 /* mondai.plist */; };
+		D8ECF2C424024AA400F3E029 /* MondaiPlistCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ECF2C324024AA400F3E029 /* MondaiPlistCodable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		98A3DC95C0D1D5B9F2F1046F /* Pods-QuizSampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizSampleApp.debug.xcconfig"; path = "Target Support Files/Pods-QuizSampleApp/Pods-QuizSampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 		AB90F992DD4D1BB80438CA3D /* Pods-QuizSampleAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizSampleAppTests.debug.xcconfig"; path = "Target Support Files/Pods-QuizSampleAppTests/Pods-QuizSampleAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C5DCB8A1E3DC602A49ADB7AC /* Pods-QuizSampleAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizSampleAppTests.release.xcconfig"; path = "Target Support Files/Pods-QuizSampleAppTests/Pods-QuizSampleAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		D81E7B50241CB6B8002C4153 /* MondaiObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MondaiObject.swift; sourceTree = "<group>"; };
 		D84437E72393BF3200B2DF91 /* QuizField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizField.xib; sourceTree = "<group>"; };
 		D84437E92393BF5D00B2DF91 /* QuizField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizField.swift; sourceTree = "<group>"; };
 		D8789FDC2364235000D68BC2 /* QuizSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,8 +85,8 @@
 		D8DAED1023ADE0280015865E /* ResultTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResultTableView.storyboard; sourceTree = "<group>"; };
 		D8DAED1223ADE04C0015865E /* ResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewController.swift; sourceTree = "<group>"; };
 		D8DAED1B23ADE4570015865E /* ResultTableViewCellXib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultTableViewCellXib.xib; sourceTree = "<group>"; };
-		D8DAED1D23ADF5F00015865E /* hoge.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = hoge.storyboard; sourceTree = "<group>"; };
-		D8DAED1F23ADF5FE0015865E /* hoge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hoge.swift; sourceTree = "<group>"; };
+		D8ECF2C024024A7000F3E029 /* mondai.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mondai.plist; sourceTree = "<group>"; };
+		D8ECF2C324024AA400F3E029 /* MondaiPlistCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MondaiPlistCodable.swift; sourceTree = "<group>"; };
 		FB99385D6865FA69BEAA3929 /* Pods-QuizSampleApp-QuizSampleAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizSampleApp-QuizSampleAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-QuizSampleApp-QuizSampleAppUITests/Pods-QuizSampleApp-QuizSampleAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FF52E46DB4E59BC4D8B7FF98 /* Pods_QuizSampleAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuizSampleAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -173,12 +175,13 @@
 				D8DAED1523ADE0D10015865E /* ResultTableViewController */,
 				D8DAED1723ADE11E0015865E /* QuizFieldXib */,
 				D878A00F236423D100D68BC2 /* QuizList.swift */,
+				D8ECF2C324024AA400F3E029 /* MondaiPlistCodable.swift */,
+				D81E7B50241CB6B8002C4153 /* MondaiObject.swift */,
 				D8DAED0E23A2859B0015865E /* AnserList.swift */,
 				D8789FE82364235600D68BC2 /* Assets.xcassets */,
 				D8789FEA2364235600D68BC2 /* LaunchScreen.storyboard */,
 				D8789FED2364235600D68BC2 /* Info.plist */,
-				D8DAED1D23ADF5F00015865E /* hoge.storyboard */,
-				D8DAED1F23ADF5FE0015865E /* hoge.swift */,
+				D8ECF2C024024A7000F3E029 /* mondai.plist */,
 			);
 			path = QuizSampleApp;
 			sourceTree = "<group>";
@@ -358,8 +361,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8789FEC2364235600D68BC2 /* LaunchScreen.storyboard in Resources */,
+				D8ECF2C124024A7000F3E029 /* mondai.plist in Resources */,
 				D8789FE92364235600D68BC2 /* Assets.xcassets in Resources */,
-				D8DAED1E23ADF5F10015865E /* hoge.storyboard in Resources */,
 				D8DAED1C23ADE4570015865E /* ResultTableViewCellXib.xib in Resources */,
 				D8DAED1123ADE0280015865E /* ResultTableView.storyboard in Resources */,
 				D8789FE72364235000D68BC2 /* Main.storyboard in Resources */,
@@ -492,12 +495,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D81E7B51241CB6B8002C4153 /* MondaiObject.swift in Sources */,
 				D8789FE42364235000D68BC2 /* ViewController.swift in Sources */,
 				D84437EA2393BF5D00B2DF91 /* QuizField.swift in Sources */,
+				D8ECF2C424024AA400F3E029 /* MondaiPlistCodable.swift in Sources */,
 				D8789FE02364235000D68BC2 /* AppDelegate.swift in Sources */,
 				D878A010236423D100D68BC2 /* QuizList.swift in Sources */,
 				D87D8E9423CC4E10002868C6 /* ResultTableViewCellXib.swift in Sources */,
-				D8DAED2023ADF5FE0015865E /* hoge.swift in Sources */,
 				D8DAED1323ADE04C0015865E /* ResultTableViewController.swift in Sources */,
 				D8789FE22364235000D68BC2 /* SceneDelegate.swift in Sources */,
 				D87D8E9823CC5063002868C6 /* CorrectAnswerRateCellXib.swift in Sources */,

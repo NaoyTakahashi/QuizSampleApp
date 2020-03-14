@@ -83,7 +83,7 @@ class ResultTableViewController: UIViewController, UITableViewDelegate, UITableV
             return correctAnswerRateCell
         case 1:
             resultTableViewCell.quizNo?.text = String(resultObject.quizId)
-            resultTableViewCell.anser?.text = "解答：\(resultObject.choiceAnser)"
+            resultTableViewCell.anser?.text = "\(resultObject.choiceAnser)"
             resultTableViewCell.correctORIncorrect?.text = resultObject.successOrfailure
 
             return resultTableViewCell

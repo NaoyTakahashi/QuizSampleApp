@@ -16,54 +16,61 @@ class QuizField: UIView {
     @IBOutlet weak var choiceOneButton: UIButton!
     @IBOutlet weak var choiceTwoButton: UIButton!
     @IBOutlet weak var choiceThreeButton: UIButton!
+    
     @IBOutlet weak var quizText: UILabel!
+    
+    @IBOutlet weak var answerTextOne: UILabel!
+    @IBOutlet weak var answerTextTwo: UILabel!
+    @IBOutlet weak var answerTextThree: UILabel!
+    
     weak var delegate:ResultTableViewDelegate?
-    let getQuizList = quizList1()
-    let quizCount = quizList1().quizId.count
+    var prop: mondai?
     var idNumber = 0
     var view = UIView()
     var quizAnser: String = ""
-    var titleText: String = ""
+    var choice: String = ""
      
      @IBAction func choiceOneTap(_ sender: Any) {
-        titleText = choiceOneButton.titleLabel!.text!
-        answerCheck(titleText)
+        choice = answerTextOne.text!
+        answerCheck(choice)
         idNumber += 1
         quizView()
      }
      
      @IBAction func choiceTwoTap(_ sender: Any) {
-        titleText = choiceTwoButton.titleLabel!.text!
-        answerCheck(titleText)
+        choice = answerTextTwo.text!
+        answerCheck(choice)
         idNumber += 1
         quizView()
      }
      
      @IBAction func choiceThreeTap(_ sender: Any) {
-        titleText = choiceThreeButton.titleLabel!.text!
-        answerCheck(titleText)
+        choice = answerTextThree.text!
+        answerCheck(choice)
         idNumber += 1
         quizView()
-        
      }
     
      
-     func quizView() -> String {
-        //let hogea = ViewController()
-        //let hoge = Bundle.main.loadNibNamed("Main", owner: self, options: nil)!.first! as! ViewController
+    func quizView() -> String {
+        let quizCount = prop?.Oya.count
         if quizCount == idNumber {
-            choiceOneButton.removeFromSuperview()
-            choiceTwoButton.removeFromSuperview()
-            choiceThreeButton.removeFromSuperview()
-            quizText.removeFromSuperview()
+            removeQuizFieldItems()
             delegate?.toResultTableViewSegue()
             print(Realm.Configuration.defaultConfiguration.fileURL!)
          } else {
-            choiceOneButton.setTitle(getQuizList.choiceAnswer[idNumber][0], for: .normal)
-            choiceTwoButton.setTitle(getQuizList.choiceAnswer[idNumber][1], for: .normal)
-            choiceThreeButton.setTitle(getQuizList.choiceAnswer[idNumber][2], for: .normal)
-            quizText.text = getQuizList.question[idNumber]
-            quizAnser = String(getQuizList.anser[idNumber])
+            quizText.text = prop?.Oya[0].Questionsentence
+            answerTextOne.text = prop?.Oya[0].Choices[0]
+            answerTextTwo.text = prop?.Oya[0].Choices[1]
+            answerTextThree.text = prop?.Oya[0].Choices[2]
+            
+//            choiceOneButton.setTitle(getQuizList.choiceAnswer[idNumber][0], for: .normal)
+//            choiceTwoButton.setTitle(getQuizList.choiceAnswer[idNumber][1], for: .normal)
+//            choiceThreeButton.setTitle(getQuizList.choiceAnswer[idNumber][2], for: .normal)
+            
+            if let Anser = prop?.Oya[0].Questionsentence {
+                quizAnser = Anser
+            }
             print("\(idNumber) for \(quizCount)")
          }
         return quizAnser
@@ -85,11 +92,11 @@ class QuizField: UIView {
     func sevedAnswe(_ successOrfailure:String,_ choiceAnser: String) {
         let realm = try! Realm()
         let result = Result()
-        result.caseId = getQuizList.caseId
-        result.caseTitle = getQuizList.caseTitle
-        result.quizId = getQuizList.quizId[idNumber]
-        result.question = getQuizList.question[idNumber]
-        result.anser = getQuizList.anser[idNumber]
+//        result.caseId = getQuizList.caseId
+//        result.caseTitle = getQuizList.caseTitle
+//        result.quizId = getQuizList.quizId[idNumber]
+//        result.question = getQuizList.question[idNumber]
+//        result.anser = getQuizList.anser[idNumber]
         result.successOrfailure = successOrfailure
         result.choiceAnser = choiceAnser
         
@@ -98,15 +105,25 @@ class QuizField: UIView {
         }
     }
     
+    func removeQuizFieldItems() {
+        quizText.removeFromSuperview()
+        answerTextOne.removeFromSuperview()
+        answerTextTwo.removeFromSuperview()
+        answerTextThree.removeFromSuperview()
+        choiceOneButton.removeFromSuperview()
+        choiceTwoButton.removeFromSuperview()
+        choiceThreeButton.removeFromSuperview()
+    }
+    
     func deleteAction() {
         let realm = try! Realm()
         //let deleteResult = realm.objects(Result.self)
-        let deletePlayedTestCaseFilterOn = realm.objects(PlayedTestCase.self).filter("caseId = \(getQuizList.caseId)")
-        let deleteResultFilterOn = realm.objects(Result.self).filter("caseId = \(getQuizList.caseId)")
-        try! realm.write {
-            realm.delete(deletePlayedTestCaseFilterOn)
-            realm.delete(deleteResultFilterOn)
-        }
+//        let deletePlayedTestCaseFilterOn = realm.objects(PlayedTestCase.self).filter("caseId = \(getQuizList.caseId)")
+//        let deleteResultFilterOn = realm.objects(Result.self).filter("caseId = \(getQuizList.caseId)")
+//        try! realm.write {
+//            realm.delete(deletePlayedTestCaseFilterOn)
+//            realm.delete(deleteResultFilterOn)
+//        }
         print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
     
@@ -123,6 +140,17 @@ class QuizField: UIView {
          let superScreen: CGRect = (self.window?.screen.bounds)!
          
      }
+    
+    func codableMondaiPlist() {
+        if let url = Bundle.main.path(forResource: "mondai", ofType: "plist") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: url))
+                self.prop = try PropertyListDecoder().decode(mondai.self, from: data)
+            } catch let e {
+                print("Reason: \(e)")
+            }
+        }
+    }
     
     /*
     // Only override draw() if you perform custom drawing.

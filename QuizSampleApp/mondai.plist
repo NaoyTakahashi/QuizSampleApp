@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Oya</key>
+	<array>
+		<dict>
+			<key>Correctanswer</key>
+			<integer>0</integer>
+			<key>Choices</key>
+			<array>
+				<string>インターネット経由での大規模アップデートで年4回自動的に進化</string>
+				<string>大規模アップデートは無料で、OSの入れ替え作業も不要</string>
+				<string>大規模アップデートを定期的に適用していればサポートも切れない</string>
+				<string>中身は変わっても名称は「Windows 10」のまま(2019年1月時点)</string>
+			</array>
+			<key>Questionsentence</key>
+			<string>Windows10の特徴として以下の中で間違っているものはどれか？</string>
+		</dict>
+	</array>
+</dict>
+</plist>

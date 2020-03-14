@@ -27,6 +27,8 @@ class ViewController: UIViewController, ResultTableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        edgesForExtendedLayout = []
+        choiceListView.codableMondaiPlist()
         choiceListView.delegate = self
     }
     
@@ -44,7 +46,6 @@ class ViewController: UIViewController, ResultTableViewDelegate {
     
     @IBAction func deleteAction(_ sender: Any) {
         choiceListView.deleteAction()
-
     }
     
     @IBAction func TapStartButton(_ sender: Any) {
@@ -74,11 +75,7 @@ class ViewController: UIViewController, ResultTableViewDelegate {
         performSegue(withIdentifier: "toResultTableViewSegue", sender: nil)
     }
     
-    //    func toResultTableViewSegue() {
-    //        let storyboard: UIStoryboard = UIStoryboard(name:"hoge", bundle: nil)
-    //        let toResultListSegue = storyboard.instantiateViewController(withIdentifier: "hoge") as! hoge
-    //        self.present(toResultListSegue, animated: false, completion: nil)
-    //    }
+
     
 }
 
